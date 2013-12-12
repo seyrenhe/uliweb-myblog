@@ -1,8 +1,20 @@
 {{extend "base.html"}}
 {{block content}}
-    <style type="text/css">
-    td{font-size:10pt;}
-    </style>
+<body data-twittr-rendered="true">
+    <div class="container">
+        <header class="masthead">
+            <a class="" href="/" title="">
+                <img src="{{=url_for_static('port.png')}}" alt="seyren's port">
+            </a>
+            <br>
+            <p>
+                <strong>Seyren's小屋</strong>
+                <br>
+                I live in Ningbo and like Programming and front-end design.
+                <br>
+                Now i'm working for System operation and maintenance in the PSBC.
+            </p>
+        </header>
     {{if hasattr(request, 'user') and request.user:}}
     欢迎{{=request.user.username}} <a href="/logout">退出</a>
     {{else:}}
@@ -16,12 +28,11 @@
     <hr>
     {{pass}}
 
-    <table>
      {{for n in blog:}}
         <div class="row show-grid">
 
           <div class="span2 offset1">
-                <div class="alert alert-info">{{=n.username}}说:</div>
+                <div class="alert alert-info">作者:{{=n.username}}</div>
           </div>
 
           <div class="span9">
@@ -32,8 +43,9 @@
            </div>
         </div>
     {{pass}}
-    </table>
     {{include "inc_xheditor_plugins.html"}}
+    </div>
+    <!-- /close container-->
     <script type="text/javascript">
         $(function(){
             $('textarea').xheditor({
@@ -46,4 +58,5 @@
             });
         });
     </script>
+</body>
 {{end}}
