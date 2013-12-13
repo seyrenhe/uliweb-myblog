@@ -15,38 +15,38 @@
                 Now i'm working for System operation and maintenance in the PSBC.
             </p>
         </header>
-    {{if hasattr(request, 'user') and request.user:}}
-    欢迎{{=request.user.username}} <a href="/logout">退出</a>
-    {{else:}}
-    <!--<a href="/register"> 注册</a>--> <a href="/login">登录</a>
-    {{pass}}
-    <hr>
 
-    {{if hasattr(request, 'user') and request.user:}}
-    {{use "xheditor"}}
-    {{<<form}}
-    <hr>
-    {{pass}}
-
-     {{for n in blog:}}
         <div class="row show-grid">
 
           <div class="span2">
-                <div class="alert alert-info">作者:{{=n.username}}</div>
-                <div class="alert alert-info">{{=n.datetime}}</div>
+                <div class="alert alert-info">作者:{{=p.username}}</div>
+                <div class="alert alert-info">{{=p.datetime}}</div>
           </div>
 
           <div class="span9">
              <div class="well">
-                <div class="alert alert-message"><strong><a href="/reader/{{=n.id}}">{{=n.title}}</a></strong></div>
-                <!--<div class="alert alert-success"><p>{{<<n.content}}</p>{{=n.datetime}}|<a href="/delete/{{=n.id}}">删除</a>|<a href="/edit/{{=n.id}}">编辑</a></div>-->
+                <div class="alert alert-message">{{=p.title}}</div>
+                <div class="alert alert-success">{{<<p.content}}</p>{{=p.datetime}}|<a href="/delete/{{=p.id}}">删除</a>|<a href="/edit/{{=p.id}}">编辑</a></div>
              </div>
+             <!-- Duoshuo Comment BEGIN -->
+             <div class="ds-thread"></div>
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"sorcerer"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = 'http://static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                            })();
+                </script>
+            <!-- Duoshuo Comment END -->
            </div>
         </div>
-    {{pass}}
     {{include "inc_xheditor_plugins.html"}}
-    {{include "footer.html"}}
     </div>
+    {{include "footer.html"}}
     <!-- /close container-->
     <script type="text/javascript">
         $(function(){

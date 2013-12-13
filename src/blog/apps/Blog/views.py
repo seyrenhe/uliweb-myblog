@@ -5,7 +5,7 @@ from forms import BlogsForm
 @expose('/')
 def index():
     blogs = functions.get_model('blogs')
-    blog = blogs.all()
+    blog = blogs.all().order_by(blogs.c.id.desc())
     form = BlogsForm()
     if request.method == 'POST':
         flag = form.validate(request.params)
@@ -46,3 +46,18 @@ def edit(id):
                         n.content  = form.data.content
                         n.save()
                 return redirect('/')
+
+
+@expose('/reader/<id>')
+def detail(id):
+    blogs = functions.get_model('blogs')
+    blog = blogs.all()
+
+    if request.method == 'GET':
+        p = blogs.get(blogs.c.id == id)
+        p.content
+
+        if p:
+            return {'blog': blog, 'p': p}
+        else:
+            return redirect('/')

@@ -3,3 +3,14 @@
     margin: auto;
     text-align: center;
 }
+
+strong>a {
+    font-size: 40px;
+
+}
+
+footer.studio {
+    margin-top: 40px;
+    text-align: center;
+
+}
