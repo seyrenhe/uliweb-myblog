@@ -1,35 +1,27 @@
-{{extend "base.html"}}
+{{extend "basetest.html"}}
 {{block content}}
-<body data-twittr-rendered="true">
-    <div class="container">
-        <header class="masthead">
-            <a class="" href="/" title="">
-                <img src="{{=url_for_static('port.png')}}" alt="seyren's port">
-            </a>
-            <br>
-            <p>
-                <strong>Seyren's小屋</strong>
-                <br>
-                I live in Ningbo and like Programming and front-end design.
-                <br>
-                Now i'm working for System operation and maintenance in the PSBC.
-            </p>
-        </header>
-
-        <div class="row show-grid">
-
-          <div class="span2">
-                <div class="alert alert-info">作者:{{=p.username}}</div>
-                <div class="alert alert-info">{{=p.datetime}}</div>
-          </div>
-
-          <div class="span9">
-             <div class="well">
-                <div class="alert alert-message">{{=p.title}}</div>
-                <div class="alert alert-success">{{<<p.content}}</p>{{=p.datetime}}|<a href="/delete/{{=p.id}}">删除</a>|<a href="/edit/{{=p.id}}">编辑</a></div>
-             </div>
-             <!-- Duoshuo Comment BEGIN -->
-             <div class="ds-thread"></div>
+<header>
+    	<div class="logo"><a href="http://seyren.com"><span style="transition: color 1.5s ease 0s; color: rgb(26, 166, 206);" id="colorchange">Seyren</span></a></div>
+		<ul class="des">
+			<li>这是我的个人博客</li>
+            <li><a href="http://seyren.com">去我的个人页面看看</a></li>
+		</ul>
+</header>
+<div class="content-header"></div>
+<div class="content">
+<article>
+			<h1>
+                <span class="item-title">
+                <a href="/reader/{{=p.id}}">
+                {{=p.title}}
+                </a>
+                </span>
+				<span class="item-time">{{=p.datetime}}</span>
+                <div class="googleplusbtn"><g:plusone href="http://atalasii.com/post/2013-09-05/40053360364"></g:plusone></div>
+			</h1>
+            <section><p>{{<<p.content}}</p></section>
+            <!-- Duoshuo Comment BEGIN -->
+            <div class="ds-thread"></div>
                 <script type="text/javascript">
                     var duoshuoQuery = {short_name:"sorcerer"};
                         (function() {
@@ -41,24 +33,7 @@
                             || document.getElementsByTagName('body')[0]).appendChild(ds);
                             })();
                 </script>
-            <!-- Duoshuo Comment END -->
-           </div>
-        </div>
-    {{include "inc_xheditor_plugins.html"}}
-    </div>
-    {{include "footer.html"}}
-    <!-- /close container-->
-    <script type="text/javascript">
-        $(function(){
-            $('textarea').xheditor({
-                tools:'Cut,Copy,Paste,Pastetext,|,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,|,Align,List,Outdent,Indent,|,Link,Unlink,Anchor,Img,Flash,Hr,Emot,Table,Code,Quote,|,About',
-                skin:'default',
-                upFlashExt:"swf",
-                plugins:plugins,
-                height:300,
-                width:600,
-            });
-        });
-    </script>
-</body>
+           <!-- Duoshuo Comment END -->
+</article>
+</div>
 {{end}}

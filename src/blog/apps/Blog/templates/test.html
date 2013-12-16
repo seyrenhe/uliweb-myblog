@@ -7,4 +7,21 @@
             <li><a href="http://seyren.com">去我的个人页面看看</a></li>
 		</ul>
 </header>
+<div class="content-header"></div>
+<div class="content">
+{{for n in blog:}}
+<article>
+			<h1>
+                <span class="item-title">
+                <a href="/reader/{{=n.id}}">
+                {{=n.title}}
+                </a>
+                </span>
+				<span class="item-time">{{=n.datetime}}</span>
+                <div class="googleplusbtn"><g:plusone href="http://atalasii.com/post/2013-09-05/40053360364"></g:plusone></div>
+			</h1>
+            <section><p>{{<<n.content}}</p></section>
+</article>
+{{pass}}
+</div>
 {{end}}
