@@ -11,8 +11,8 @@ background-image:url(),url();
 	box-shadow:-5px 0px 7px #000 inset;
 }
 header::after{content:'@Seyrenhe';position:absolute;bottom:0px;right:0px;height:12px;width:250px;opacity:0.3;color:#fff;font-size:12px;text-align:right;padding:5px;}
-header::before{content:'';position:absolute;bottom:0px;right:0px;height:215px;width:250px;background:url() right bottom no-repeat;opacity:0.8;}
-article{margin:10px;padding:20px;border-radius:5px;box-shadow:0 0 2px #666 inset;position:relative;min-height:100px;
+header::before{content:'';position:absolute;bottom:0px;right:0px;height:215px;width:250px;background:url(http://m2.img.libdd.com/farm3/235/EEA09607C142F845C098C434471561EB_128_128.PNG) right bottom no-repeat;opacity:0.8;}
+article{margin:10px;padding:20px;border-radius:5px;box-shadow:0 0 2px #666 inset;position:relative;min-height:35px;
     background:-webkit-linear-gradient(top, rgba(255,255,255,0.5)0%, rgba(255,255,255,0)100%);
     background:-moz-linear-gradient(top, rgba(255,255,255,0.5)0%, rgba(255,255,255,0)100%);
     background:-o-linear-gradient(top, rgba(255,255,255,0.5)0%, rgba(255,255,255,0)100%);

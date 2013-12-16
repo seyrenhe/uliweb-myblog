@@ -1,12 +1,6 @@
 {{extend "basetest.html"}}
 {{block content}}
-<header>
-    	<div class="logo"><a href="http://seyren.com"><span style="transition: color 1.5s ease 0s; color: rgb(26, 166, 206);" id="colorchange">Seyren</span></a></div>
-		<ul class="des">
-			<li>这是我的个人博客</li>
-            <li><a href="http://seyren.com">去我的个人页面看看</a></li>
-		</ul>
-</header>
+{{include "header.html"}}
 <div class="content-header"></div>
 <div class="content">
 {{for n in blog:}}
@@ -18,9 +12,9 @@
                 </a>
                 </span>
 				<span class="item-time">{{=n.datetime}}</span>
-                <div class="googleplusbtn"><g:plusone href="http://atalasii.com/post/2013-09-05/40053360364"></g:plusone></div>
+                <!--<div class="googleplusbtn"><g:plusone href="http://atalasii.com/post/2013-09-05/40053360364"></g:plusone></div>-->
 			</h1>
-            <section><p>{{<<n.content}}</p></section>
+            <!--<section><p>{{<<n.content}}</p></section>-->
 </article>
 {{pass}}
 </div>
