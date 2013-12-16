@@ -3,7 +3,7 @@ from uliweb import expose, functions
 from forms import BlogsForm
 
 @expose('/')
-def index():
+def test():
     blogs = functions.get_model('blogs')
     blog = blogs.all().order_by(blogs.c.id.desc())
     form = BlogsForm()
