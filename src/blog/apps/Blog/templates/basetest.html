@@ -1,12 +1,9 @@
 <html>
 <head>
-<title> Seyren的小微博---python</title>
+<title> Seyren's blog</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="uliweb 学习" />
-<link href="{{=url_for_static('mytest.css')}}" rel="stylesheet" type="text/css" / >
-<script type="text/javascript" async="" src="http://s.libdd.com/js/base/ga.$5928.js"></script>
-<script type="text/javascript" src="http://s.libdd.com/package/theme/tools.$6918.js"></script>
-<script>(function() { var c = confirm; var d = document; var i = setInterval; var a = function(e) { e = e || window.event; var t = e.target || e.srcElement; if (t.type == 'password') { if (c('警告：请不要在 http://www.diandian.com 以外的地方输入你的点点密码！\x0a\x0a点点是不会要求你从用户博客登录的，这很可能是一个窃取密码的钓鱼表单。\x0a\x0a你确定要继续下去么？')) { a = function() {}; } else { t.value = ""; return false; } } }; i(function() { if (d.addEventListener) { d.addEventListener('keypress', a, false) } else if (d.attachEvent) { d.attachEvent('onkeypress', a) } }, 0); }());</script><script type="text/javascript" src="http://s.libdd.com/package/theme/tools.$6918.js"></script><style type="text/css"></style>
+{{link "mytest.css"}}
 <script type="text/javascript">
      //fix html5 tag
      (function(){
@@ -20,6 +17,30 @@
 
 
 </head>
+<body>
+<div class="panel">
+    <ul class="btn-panel">
+        <li><a title="登录" href="#" class="icon btn-login" target="_top">登录</a></li>
+    </ul>
+</div>
 {{block content}}
 {{end content}}
+<script type="text/javascript">
+    //$(document).ready(function($){
+        if(!document.createElement('canvas').getContext){
+            $('<div style="position:absolute;top:-30px;left:0px;right:0px;bottom:-30px;z-index:1000;background:#333;padding:260px;color:#eee;"><h1 style="font-size:100px;">IE你好，IE再见</h1><p style="font-size:30px;" >请使用现代浏览器浏览本站，如Google Chrome, Mozilla Firefox, Safari, Opera等。<br />如果您不想换浏览器，那么你肯定不会对本博内容感兴趣。推荐您还是去刷微博吧。</p></div>').appendTo(document.body);
+        }
+    //});
+    </script>
+<script type="text/javascript">
+    //$(document).ready(function($){
+       var o = $('#colorchange')[0];
+       o.style.cssText += ';-webkit-transition:color 1.5s ease;-moz-transition:color 1.5s ease;-o-transition:color 1.5s ease;transition:color 1.5s ease;';
+       setInterval(function(){
+        //console.log(o);
+        o.style.color = '#'+(new Date()).getTime().toString(16).substr(-6);
+       },(1990+06+17+1989+10+09));
+    //});
+</script>
+</body>
 </html>

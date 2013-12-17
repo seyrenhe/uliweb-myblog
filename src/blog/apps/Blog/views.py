@@ -14,17 +14,7 @@ def test():
             n.save()
     return {'blog': blog, 'form': form}
 
-@expose('/admin')
-class AdminView(object):
-    def __begin__(self):
-        functions.require_login()
-        if not request.user.is_superuser:
-            error('you have no permisstion to visit the page')
 
-
-    @expose('')
-    def index(self):
-        return {}
 
 @expose('/delete/<id>')
 def delete(id):
@@ -71,3 +61,16 @@ def detail(id):
             return {'blog': blog, 'p': p}
         else:
             return redirect('/')
+
+
+@expose('/admin')
+ class AdminView(object):
+#     def __begin__(self):
+#         functions.require_login()
+#         if not request.user.is_superuser:
+#             error('you have no permisstion to visit the page')
+
+
+    @expose('')
+    def index(self):
+        return {}
