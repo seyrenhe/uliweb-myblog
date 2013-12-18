@@ -38,9 +38,40 @@ class Admin(object):
         if request.method == 'GET':
             return {'form': form}
         if request.method == 'POST':
-            f
+            flag = form.validate(request.values)
+            if flag:
+                n = Post(**form.data)
+                n.save()
+                return redirect('/')
+            else:
+                message = "There is something wrong! Please fix them."
+                return {'form':form, 'message':message}
 
 
+    @expose('/delete/<id>')
+    def delete(self,id):
+        blogs = functions.get_model('blogs')
+        n = blogs.get(blogs.c.id == id)
+        if n:
+            n.delete()
+        return redirect('/')
+
+@expose('/edit/<id>')
+def edit(self,id):
+    blogs = functions.get_model('blogs')
+    if request.method == 'GET':
+        p = blogs.get(blogs.c.id==id)
+        form = BlogsForm(data={'title':p.title,'content':p.content})
+        return {'form':form}
+    elif request.method == 'POST':
+        form = BlogsForm()
+        flag = form.validate(request.params)
+        n = blogs.get(blogs.c.id == id)
+        if n:
+            n.title = form.data.title
+            n.content = form.data.content
+            n.save()
+        return redirect('/')
 # @expose('/delete/<id>')
 # def delete(id):
 #         functions.require_login()
