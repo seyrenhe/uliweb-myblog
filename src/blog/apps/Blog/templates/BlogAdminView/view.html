@@ -1,0 +1,20 @@
+{{extend "manage_admin_layout.html"}}
+{{block sub_menu}}
+{{sub_menu(menu_items, 'manage', 'list')}}<!--选中子菜单中的该子项-->
+{{end}}
+{{block content_main}}
+<div>
+    <a href="/god/add">添加新文章</a>
+    <a href="/god/addC">添加分类</a>
+</div>
+<ul class="unstyled">
+    {{for row in objects:}}
+        <li class="panel">
+            <div class="view-title">{{=row.title}}</div>
+            <div class="view-content">{{=row.content}}</div>
+           <!-- <div class="view-category">{{=row.category}}</div>-->
+            <div class="view-modefiedtime">{{=row.modified_time}}</div>
+        </li>
+    {{pass}}
+</ul>
+{{end}}

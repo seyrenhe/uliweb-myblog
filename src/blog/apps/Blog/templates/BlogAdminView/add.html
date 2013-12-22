@@ -1,0 +1,24 @@
+{{extend "manage_admin_layout.html"}}
+{{block sub_menu}}
+{{sub_menu(menu_items, 'manage', 'list')}}<!--选中子菜单中的该子项-->
+{{end}}
+{{block content_main}}
+<h1>新增文章 =w=</h1>
+{{use "xheditor"}}
+{{<<form}}
+{{=error}}
+{{include "inc_xheditor_plugins.html"}}
+<script type="text/javascript">
+    $(function(){
+        $('textarea').xheditor({
+            tools:'Cut,Copy,Paste,Pastetext,|,Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,|,Align,List,Outdent,Indent,|,Link,Unlink,Anchor,Img,Flash,Hr,Emot,Table,Code,Quote,|,About',
+            skin:'default',
+            upFlashExt:"swf",
+            plugins:plugins,
+            height:300,
+            width:600,
+        });
+    });
+</script>
+
+{{end}}

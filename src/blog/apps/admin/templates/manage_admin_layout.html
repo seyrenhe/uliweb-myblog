@@ -1,0 +1,9 @@
+{{extend "admin_layout.html"}}
+{{block menu}}
+{{menu('admin')}}
+{{end}}
+{{block user_info}}
+{{end}}
+{{block sub_menu}}
+{{sub_menu(menu_items, 'manage')}}<!--选中子菜单中的该子项-->
+{{end}}

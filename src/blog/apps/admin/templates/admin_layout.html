@@ -1,0 +1,48 @@
+{{extend "layout.html"}}
+{{block content_tool_container}}
+{{end}}
+
+{{block content_sidebar}}
+{{use "jquery"}}
+{{use "jsmenu"}}
+{{
+menu_items = []
+menu_items.append(
+    {
+        'name': 'manage',
+        'title':_('管理'),
+        'subs':[
+                {'name':'list', 'title':_('文章管理'), 'link':'/god'},
+                {'name':'conf', 'title':_('没想好'), 'link':'#'}
+        ]
+    }
+)
+menu_items.append(
+    {
+        'name': 'setting',
+        'title':_('博客配置'),
+        'link':'#'
+    }
+)
+pass
+#if request.user:
+#    menu_items.append(
+#        {
+#        'name': 'user',
+#        'title':_('Settings'),
+#        'subs':[
+#                {'name': 'information', 'title':_('Information'), 'link':'/user/view'},
+#                {'name': 'password', 'title':_('Change Password'), 'link':'/user/change_password'},
+#                ]
+#        },
+#    )
+#pass
+
+
+}}
+<div class="sidebar">
+    {{block sub_menu}}
+    {{sub_menu(menu_items, 'user')}}
+    {{end}}
+</div>
+{{end}}

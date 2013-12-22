@@ -1,6 +1,6 @@
-{{extend "basetest.html"}}
+{{extend "Blog/basetest.html"}}
 {{block content}}
-{{include "header.html"}}
+{{include "Blog/header.html"}}
 <div class="content-header"></div>
 <div class="content">
 {{for n in blog:}}
@@ -11,7 +11,7 @@
                 {{=n.title}}
                 </a>
                 </span>
-				<span class="item-time">{{=n.datetime}}</span>
+				<span class="item-time">{{=n.modified_time}}</span>
                 <!--<div class="googleplusbtn"><g:plusone href="http://atalasii.com/post/2013-09-05/40053360364"></g:plusone></div>-->
 			</h1>
             <!--<section><p>{{<<n.content}}</p></section>-->

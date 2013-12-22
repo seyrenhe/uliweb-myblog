@@ -1,6 +1,6 @@
-{{extend "basetest.html"}}
+{{extend "Blog/basetest.html"}}
 {{block content}}
-{{include "header.html"}}
+{{include "Blog/header.html"}}
 <div class="content-header"></div>
 <div class="content">
 <article>
@@ -10,7 +10,7 @@
                 {{=p.title}}
                 </a>
                 </span>
-				<span class="item-time">{{=p.datetime}}</span>
+				<span class="item-time">{{=p.modified_time}}</span>
 			</h1>
             <section><p>{{<<p.content}}</p></section>
             <!-- Duoshuo Comment BEGIN -->
