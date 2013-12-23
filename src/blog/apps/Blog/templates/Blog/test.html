@@ -3,17 +3,18 @@
 {{include "Blog/header.html"}}
 <div class="content-header"></div>
 <div class="content">
-{{for n in blog:}}
+{{for row in objects:}}
 <article>
 			<h1>
                 <span class="item-title">
-                <a href="/reader/{{=n.id}}">
-                {{=n.title}}
+                <a href="/reader/{{=row.id}}">
+                {{=row.title}}
                 </a>
                 </span>
-				<span class="item-time">{{=n.modified_time}}</span>
+				<span class="item-time">{{=row.modified_time}}</span>
 </article>
 {{pass}}
 <div class="pages-nav">{{<<pagination}}</div>
 </div>
+{{include "Blog/footer.html"}}
 {{end}}

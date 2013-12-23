@@ -58,8 +58,9 @@ section img{display:block;margin:30px;box-shadow:1px 1px 5px #999;border:1px sol
 .item-tag a{color:#333;}
 .item-tags::before{content:'Tags:';font-size:16px;}
 .reply{float:right;margin-right:10px;margin-top:10px;border-radius:5px;box-shadow:0 0 2px #666 inset; padding:2px 2px 0 2px;}
-.pages-nav{text-align:right;margin:10px;font-size:12px;padding-bottom:30px;margin-left:250px;}
+.pages-nav{text-align:right;margin:10px;font-size:12px;padding-bottom:0px;margin-left:10px;}
 .pages-nav span{padding:5px 10px;border-radius:3px;box-shadow:0 0 2px #666 inset;}
+.pages-nav ul{height: 25px;margin: auto}
 .pages-nav ul li{float: left;padding: 5px 10px;box-shadow: 0 0 2px #666 inset;boder-radius: 3px;}
 .googleplusbtn{position:absolute;top:20px;right:0;}
 .panel{
@@ -69,6 +70,10 @@ section img{display:block;margin:30px;box-shadow:1px 1px 5px #999;border:1px sol
 }
 .panel{
     z-index: 1;
+}
+.footer{
+    margin: 0px 250px 0px;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {height: 10px;overflow: visible;width: 10px;}
