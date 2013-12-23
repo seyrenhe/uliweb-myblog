@@ -1,5 +1,6 @@
 *{margin:0;padding:0;}
 ul,ol,li{list-style-type:none;}
+.btn-panel li{float:left;margin-left: 8px;}
 a{text-decoration:none;color:#333;}
 body{font-family:'微软雅黑',arial,sans-serif;color:#333;
 background-color:#ddd;
@@ -59,12 +60,15 @@ section img{display:block;margin:30px;box-shadow:1px 1px 5px #999;border:1px sol
 .reply{float:right;margin-right:10px;margin-top:10px;border-radius:5px;box-shadow:0 0 2px #666 inset; padding:2px 2px 0 2px;}
 .pages-nav{text-align:right;margin:10px;font-size:12px;padding-bottom:30px;margin-left:250px;}
 .pages-nav span{padding:5px 10px;border-radius:3px;box-shadow:0 0 2px #666 inset;}
-
+.pages-nav ul li{float: left;padding: 5px 10px;box-shadow: 0 0 2px #666 inset;boder-radius: 3px;}
 .googleplusbtn{position:absolute;top:20px;right:0;}
 .panel{
     position: fixed;
     right: 50px;
     top: 10px;
+}
+.panel{
+    z-index: 1;
 }
 
 ::-webkit-scrollbar {height: 10px;overflow: visible;width: 10px;}

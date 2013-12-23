@@ -9,7 +9,7 @@ class AddForm(Form):
     #username = StringField(label="用户名", required=True)
     title = StringField(label="标题", required=True)
     content = TextField(label="内容", required=True, rows=20, cols=100)
-    category = StringField(label="分类", required=True)
+    #category = StringField(label="分类", required=True)
 
 
 
