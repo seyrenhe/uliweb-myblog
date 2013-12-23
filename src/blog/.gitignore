@@ -3,4 +3,4 @@
 local_settings.ini
 sessions/*
 .idea/*
-../idea/*
+../../idea/*
