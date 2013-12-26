@@ -4,15 +4,27 @@
 {{end}}
 {{block content_main}}
 <div>
-    <a href="/god/add">添加新文章</a>
-    <a href="/god/addC">添加分类</a>
+    <a class="btn btn-primary" href="/god/add">添加新文章</a>
+    <a class="btn btn-primary" href="/god/addC">添加分类</a>
 </div>
-<ul class="unstyled">
-    {{for row in objects:}}
-        <li class="panel">
-            <div class="view-title">{{=row.title}}</div>
-            <div class="view-modefiedtime">{{=row.modified_time}}</div>
-        </li>
-    {{pass}}
-</ul>
+
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>修改日期</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{for row in objects:}}
+          <tr>
+            <td><a href="/reader/{{=row.id}}">{{=row.title}}</a></td>
+            <td>{{=row.modified_time}}</td>
+            <td><a href="/god/delete/{{=row.id}}">删除</a></td>
+            <td><a href="/god/edit/{{=row.id}}">编辑</a></td>
+          </tr>
+          {{pass}}
+        </tbody>
+      </table>
+<div class="pagination pagination-centered">{{<<pagination}}</div>
 {{end}}
